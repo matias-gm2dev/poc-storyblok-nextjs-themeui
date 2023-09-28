@@ -26,7 +26,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
       auth: process.env.GITHUB_TOKEN,
     });
 
-    await octokit.request('POST /repos/{owner}/{repo}/merges', {
+    await octokit.request(`POST /repos/${owner}/${repo}/merges`, {
       owner,
       repo,
       base,
