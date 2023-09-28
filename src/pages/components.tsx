@@ -169,7 +169,7 @@ export default function Components({ story }: StoryProps) {
                   <Text variant="caption">adjective</Text>
                 </Box>
                 <Text variant="body2">
-                  well meaning and kindly. <br /> "a benevolent smile"
+                  well meaning and kindly. <br /> &quot;a benevolent smile&quot;
                 </Text>
                 <Button sx={{ pl: 0 }} variant="textPrimary">
                   Learn More

@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/aria-props */
 import { Box, Button, Container, Divider, Flex, Heading, Text, Image, IconButton } from 'theme-ui';
 import { SbBlokData, storyblokEditable } from '@storyblok/react';
 import { TextField } from '../forms/TextField.component';
