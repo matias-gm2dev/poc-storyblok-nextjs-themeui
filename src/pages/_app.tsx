@@ -51,7 +51,7 @@ storyblokInit({
 export default function App({ Component, pageProps }: AppProps) {
 
   return (
-    <ThemeProvider theme={darkTempation}>
+    <ThemeProvider theme={baseTheme}>
       <style jsx global>{`
         :root {
           --font-body: ${sourceSans.style.fontFamily};
