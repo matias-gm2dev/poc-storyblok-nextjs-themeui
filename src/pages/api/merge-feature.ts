@@ -28,7 +28,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
         auth: process.env.OCTOKIT_ACCESS_TOKEN,
       });
 
-      await octokit.request(`POST /repos/${owner}/${repo}/merges`, {
+   const request=   await octokit.request(`POST /repos/${owner}/${repo}/merges`, {
         owner,
         repo,
         base,
@@ -38,7 +38,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
           'X-GitHub-Api-Version': '2022-11-28',
         },
       });
-      res.status(200).json({ success: true });
+      res.status(200).json({ success: true, request });
     } catch (error) {
       res
         .status(500)
