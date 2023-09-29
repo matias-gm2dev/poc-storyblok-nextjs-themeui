@@ -10,6 +10,7 @@ import { Octokit } from 'octokit';
 type Data = {
   success?: boolean;
   error?: any;
+  [x: string]: any;
 };
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse<Data>) {
@@ -39,7 +40,14 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
       });
       res.status(200).json({ success: true });
     } catch (error) {
-      res.status(500).json({ success: true, error: error as any });
+      res
+        .status(500)
+        .json({
+          success: false,
+          error: error as any,
+          OCTOKIT_ACCESS_TOKEN: process.env.OCTOKIT_ACCESS_TOKEN,
+          MERGE_ACCESS_TOKEN: process.env.MERGE_ACCESS_TOKEN,
+        });
     }
   }
 }
